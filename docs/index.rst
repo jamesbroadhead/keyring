@@ -1,5 +1,8 @@
+*********************************
 Welcome to keyring documentation!
-========================================
+*********************************
+
+.. include:: ../README.rst 
 
 .. toctree::
    :maxdepth: 1
@@ -13,8 +16,9 @@ Welcome to keyring documentation!
     :show-inheritance:
 
 
+******************
 Indices and tables
-==================
+******************
 
 * :ref:`genindex`
 * :ref:`modindex`

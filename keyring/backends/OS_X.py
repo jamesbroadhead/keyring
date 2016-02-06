@@ -29,6 +29,9 @@ class Keyring(KeyringBackend):
                                 """(?:"(?P<pw>.*)")?""")
     store = 'generic'
 
+    keychain = None
+    "Pathname to keychain filename, overriding default keychain."
+
     @properties.ClassProperty
     @classmethod
     def priority(cls):
@@ -111,6 +114,8 @@ class Keyring(KeyringBackend):
                 '-a', username,
                 '-s', service,
             ]
+            if self.keychain:
+                cmd.append(self.keychain)
             call = subprocess.Popen(
                 cmd,
                 stderr=subprocess.PIPE,
